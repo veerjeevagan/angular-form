@@ -1,0 +1,163 @@
+
+        <aw-wizard class="space">
+            <aw-wizard-step stepTitle="step 1">
+                  
+     
+              <form role="role" #userForm1 = "ngForm" >
+                
+
+                <div class="form-group">
+                    <label for="firstName">first name:</label>
+                    <input 
+                        ngModel 
+                        name="firstName"
+                        type="text" 
+                        #firstName="ngModel" 
+                        class="form-control" 
+                        id="firstName"
+                        required>
+                    <div class="alert alert-danger" *ngIf="!firstName.valid && firstName.touched ">first name is required</div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">last name:</label>
+                    <input 
+                        ngModel 
+                        name="lastName" 
+                        type="text" 
+                        #lastName="ngModel" 
+                        class="form-control" 
+                        id="lastName"
+                        required>
+                    <div class="alert alert-danger" *ngIf="!lastName.valid && lastName.touched ">last name is required</div>
+                </div>
+                <div class="form-group">
+                    <label for="emailId">email ID:</label>
+                    <input 
+                        ngModel 
+                        name="emailId" 
+                        type="email" 
+                        #emailId="ngModel" 
+                        class="form-control" 
+                        id="emailId"
+                        required>
+                    <div class="alert alert-danger" *ngIf="!emailId.valid && emailId.touched ">email id is required</div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">phone number:</label>
+                    <input 
+                        ngModel 
+                        name="phone]" 
+                        type="number" 
+                        #phone="ngModel" 
+                        class="form-control" 
+                        id="phone"
+                        required>
+                    <div class="alert alert-danger" *ngIf="!phone.valid && phone.touched ">phone number is required</div>
+                </div>
+                <button 
+                ngModel
+                name="step1"
+                ngDefaultControl  
+                (click) = "log(userForm1.form.value)"
+                id="step1"
+                type="button" 
+                #step1 = "ngModel"
+                class="btn btn-primary" 
+                [disabled]="userForm1.form.invalid"               
+                awNextStep>next</button>
+            </form>
+              
+              
+            </aw-wizard-step>
+
+
+            <aw-wizard-step stepTitle="step 2" >
+            
+                <form role="form" #userForm2 = "ngForm" >
+                    <div class="form-group">
+                        <label for="address1">address 1:</label>
+                        <input 
+                            ngModel 
+                            name="address1" 
+                            type="text" 
+                            #address1="ngModel" 
+                            class="form-control" 
+                            id="address1"
+                            required>
+                        <div class="alert alert-danger" *ngIf="!address1.valid && address1.touched ">please enter address: </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address2">address 2:</label>
+                        <input 
+                            ngModel 
+                            name="address2" 
+                            type="text" 
+                            #emailId="ngModel" 
+                            class="form-control" 
+                            id="address2"
+                            >
+                    </div>
+                    <div class="form-group">
+                        <label for="city">city:</label>
+                        <input 
+                            ngModel 
+                            name="city" 
+                            type="text" 
+                            #city="ngModel" 
+                            class="form-control" 
+                            id="city"
+                            required>
+                        <div class="alert alert-danger" *ngIf="!city.valid && city.touched ">please enter city: </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="zipcode">zipcode:</label>
+                        <input 
+                            ngModel 
+                            name="zipcode" 
+                            type="number" 
+                            #zipcode="ngModel" 
+                            class="form-control" 
+                            id="zipcode"
+                            required>
+                        <div class="alert alert-danger" *ngIf="!zipcode.valid && zipcode.touched ">please enter zipcode: </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state">state:</label>
+                        <input 
+                            ngModel 
+                            name="state" 
+                            type="text" 
+                            #state="ngModel" 
+                            class="form-control" 
+                            id="state"
+                            required>
+                        <div class="alert alert-danger" *ngIf="!state.valid && state.touched ">please enter state: </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">country:</label>
+                        <input 
+                            ngModel 
+                            name="country" 
+                            type="text" 
+                            #country="ngModel" 
+                            class="form-control" 
+                            id="country"
+                            required>
+                        <div class="alert alert-danger" *ngIf="!country.valid && country.touched ">please enter country: </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" awPreviousStep>Go to previous step</button>
+                    <button type="submit" 
+                        [disabled]="userForm2.form.invalid" 
+                        class="margin btn btn-primary" 
+                        (click)="onClickSubmit(userForm2.form.value  ,userForm2)">submit</button>
+                </form>
+                
+              </aw-wizard-step>
+              
+            </aw-wizard>
+
+        
+
+
+    
